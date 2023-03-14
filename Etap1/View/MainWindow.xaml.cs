@@ -28,11 +28,20 @@ namespace View
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //MessageBox.Show("Button is Clicked");
-
+            /*
             Label testLabel = new Label();
             testLabel.Content = "TEST";
             this.Granice.Child = testLabel;
+            */
 
+            //int ilosc = Int32.Parse(this.Ilosc.Text);
+
+            for(int i = 0; i < 5; i++)
+            {
+                Kolko kolko = new Kolko();
+                kolko.Promien = 5;
+                kolko.Rysuj(this.Granice, 100, 100);
+            }
         }
     }
 }

@@ -7,9 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Border x:Name="Granice" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="414" Margin="10,0,0,0" VerticalAlignment="Center" Width="390" Background="Red">
-            <Image x:Name="Kula" Height="NaN" Width="NaN" Source="/kula.png" Margin="169,181,169,181"/>
-        </Border>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="617,82,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="617,163,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Canvas x:Name="Granice" Margin="95,63,400,63"/>
+        <TextBox x:Name="Ilosc" HorizontalAlignment="Left" Margin="577,126,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>
