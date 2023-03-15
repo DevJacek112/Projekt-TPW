@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -34,14 +35,11 @@ namespace View
             this.Granice.Child = testLabel;
             */
 
-            //int ilosc = Int32.Parse(this.Ilosc.Text);
+            int ilosc = Int32.Parse(this.Ilosc.Text);
 
-            for(int i = 0; i < 5; i++)
-            {
-                Kolko kolko = new Kolko();
-                kolko.Promien = 5;
-                kolko.Rysuj(this.Granice, 100, 100);
-            }
+            Kolko kolko = new Kolko();
+            kolko.Promien = 5;
+            kolko.Rysuj(this.Granice, ilosc);
         }
     }
 }

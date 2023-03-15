@@ -6,9 +6,11 @@
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid HorizontalAlignment="Right" Width="800">
         <Button Content="Button" HorizontalAlignment="Left" Margin="617,163,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <Canvas x:Name="Granice" Margin="95,63,400,63"/>
-        <TextBox x:Name="Ilosc" HorizontalAlignment="Left" Margin="577,126,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="95,63,400,63">
+            <Canvas x:Name="Granice" Margin="4,4,4,4"/>
+        </Border>
+        <TextBox x:Name="Ilosc" HorizontalAlignment="Left" Margin="577,126,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

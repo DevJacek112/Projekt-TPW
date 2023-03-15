@@ -13,22 +13,24 @@ namespace View
     {
         public double Promien { get; set; }
 
-        public void Rysuj(Canvas canvas, double x, double y)
+        public void Rysuj(Canvas canvas, int liczbaKolek)
         {
-            Random r = new Random();
+            for(int i = 0; i < liczbaKolek; i++) {
+                Random r = new Random(Guid.NewGuid().GetHashCode());
 
-            x = r.Next(1, (int)canvas.ActualWidth);
-            y = r.Next(1, (int)canvas.ActualHeight);
+                int x = r.Next(1, (int)canvas.ActualWidth);
+                int y = r.Next(1, (int)canvas.ActualHeight);
 
-            Ellipse circle = new Ellipse();
-            circle.Width = 2 * Promien;
-            circle.Height = 2 * Promien;
-            circle.Fill = new SolidColorBrush(Colors.Red);
+                Ellipse circle = new Ellipse();
+                circle.Width = 2 * Promien;
+                circle.Height = 2 * Promien;
+                circle.Fill = new SolidColorBrush(Colors.Red);
 
-            Canvas.SetLeft(circle, x - Promien);
-            Canvas.SetTop(circle, y - Promien);
+                Canvas.SetLeft(circle, x - Promien);
+                Canvas.SetTop(circle, y - Promien);
 
-            canvas.Children.Add(circle);
-        }
+                canvas.Children.Add(circle);
+            }
+         }
     }
 }
