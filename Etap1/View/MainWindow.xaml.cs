@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,9 @@ namespace View
         {
             InitializeComponent();
         }
+        public int getIlosc() {
+            return Int32.Parse(this.Ilosc.Text);
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -35,7 +39,7 @@ namespace View
             this.Granice.Child = testLabel;
             */
 
-            int ilosc = Int32.Parse(this.Ilosc.Text);
+            int ilosc = getIlosc();
 
             Kolko kolko = new Kolko();
             kolko.Promien = 5;
