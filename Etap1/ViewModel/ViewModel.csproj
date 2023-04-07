@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,10 +44,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CanvasMultiValueConverter.cs" />
+    <Compile Include="Commands.cs" />
+    <Compile Include="MyCommandParameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelayCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logika\Logika.csproj">
+      <Project>{30044cf2-c982-4ed4-820c-4f7ba0e7687d}</Project>
+      <Name>Logika</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

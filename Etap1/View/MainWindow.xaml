@@ -12,5 +12,6 @@
             <Canvas x:Name="Granice" Margin="4,4,4,4"/>
         </Border>
         <TextBox x:Name="Ilosc" HorizontalAlignment="Left" Margin="577,126,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
+        <Button Content="banan" HorizontalAlignment="Left" Margin="637,232,0,0" VerticalAlignment="Top" Command="{Binding ClickSpawnButonCommand}" CommandParameter="{Binding ElementName=Ilosc, Path=Text}"/>
     </Grid>
 </Window>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,8 @@ namespace View
 
         public void Rysuj(Canvas canvas, int liczbaKolek)
         {
-            for(int i = 0; i < liczbaKolek; i++) {
+
+            for (int i = 0; i < liczbaKolek; i++) {
                 Random r = new Random(Guid.NewGuid().GetHashCode());
 
                 int x = r.Next(1, (int)canvas.ActualWidth);

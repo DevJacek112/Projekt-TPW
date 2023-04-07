@@ -14,6 +14,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ViewModel;
 
 namespace View
 {
@@ -25,7 +26,9 @@ namespace View
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new Commands();
         }
+
         public int getIlosc() {
             return Int32.Parse(this.Ilosc.Text);
         }

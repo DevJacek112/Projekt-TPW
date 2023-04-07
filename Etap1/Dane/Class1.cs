@@ -1,16 +1,16 @@
-﻿using Dane;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model
+namespace Dane
 {
-    internal class ObiektKuli
+    internal class Class1
     {
-        Kula kula;
+        static void Main(string[] args)
+        {
 
-
+        }
     }
 }
