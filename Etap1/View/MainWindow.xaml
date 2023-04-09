@@ -23,7 +23,7 @@
                 Command="{Binding ClickSpawnButonCommand}">
 
             <Button.CommandParameter>
-                <viewModel:MyCommandParameters Text="{Binding ElementName=MyTextBox, Path=Text}" />
+                <viewModel:MyCommandParameters testowy="kututy}" />
             </Button.CommandParameter>
 
         </Button>

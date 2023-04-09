@@ -20,12 +20,15 @@ namespace ViewModel
 
         public bool CanExecute(object parameter)
         {
+            return true;
+
+            /*
             if (parameter != null)
             {
                 return true;
             }
 
-            else { return false; }
+            else { return false; }*/
         }
 
         public void Execute(object parameter)

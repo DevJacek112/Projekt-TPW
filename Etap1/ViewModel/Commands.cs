@@ -32,7 +32,7 @@ namespace ViewModel
             }
 
             var canvas = parameters.Canvas;
-            var text = parameters.Text;
+            var text = parameters.testowy;
             Debug.WriteLine("Button clicked");
             Debug.WriteLine(text);
         }

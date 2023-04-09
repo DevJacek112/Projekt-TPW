@@ -9,6 +9,7 @@ namespace ViewModel
 {
     public class MyCommandParameters
     {
+        public object testowy { get; set; }
         public string Text { get; set; }
         public Canvas Canvas { get; set; }
     }
