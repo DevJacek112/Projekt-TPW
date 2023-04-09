@@ -14,15 +14,15 @@ namespace Logika
     public class Controller
     {
 
-        public static void spawnCircles(int value)
+        public static void spawnCircles(int value, Canvas canvas)
         {
             for(int i = 0; i < value; i++)
             {
-                //spawnCircle();
+                spawnCircle(canvas, 5, 5);
             }
         }
 
-        public void spawnCircle(Canvas canvas, int size,  int radius)
+        public static void spawnCircle(Canvas canvas, int size,  int radius)
         {
 
             Random r = new Random(Guid.NewGuid().GetHashCode());

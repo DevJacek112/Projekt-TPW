@@ -8,22 +8,20 @@
 
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    
+
     <Window.Resources>
         <viewModel:Commands x:Key="Commands" />
     </Window.Resources>
-    
+
     <Grid HorizontalAlignment="Right" Width="800">
-        <Button Content="Button" HorizontalAlignment="Left" Margin="617,163,0,0" VerticalAlignment="Top" Click="Button_Click"/>
         <Border BorderBrush="Black" BorderThickness="1" Margin="95,63,400,63">
             <Canvas x:Name="Granice" Margin="4,4,4,4"/>
         </Border>
         <TextBox x:Name="Ilosc" HorizontalAlignment="Left" Margin="577,126,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
-        <Button Content="banan" HorizontalAlignment="Left" Margin="637,232,0,0" VerticalAlignment="Top" DataContext="{StaticResource Commands}" 
-                Command="{Binding ClickSpawnButonCommand}">
-
+        <Button Content="SPAWN" HorizontalAlignment="Left" Margin="588,163,0,0" VerticalAlignment="Top" DataContext="{StaticResource Commands}" 
+                Command="{Binding ClickSpawnButonCommand}" Height="99" Width="98">
             <Button.CommandParameter>
-                <viewModel:MyCommandParameters testowy="kututy}" />
+                <viewModel:MyCommandParameters numberOfCirclesTextbox="{x:Reference Name=Ilosc}" canvas="{x:Reference Name=Granice}" />
             </Button.CommandParameter>
 
         </Button>

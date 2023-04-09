@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,10 @@ namespace ViewModel
 
         public bool CanExecute(object parameter)
         {
+
             return true;
+
+            //Debug.WriteLine(parameter);
 
             /*
             if (parameter != null)
@@ -28,7 +32,8 @@ namespace ViewModel
                 return true;
             }
 
-            else { return false; }*/
+            else { return false; }
+            */
         }
 
         public void Execute(object parameter)

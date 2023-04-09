@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,8 +10,7 @@ namespace ViewModel
 {
     public class MyCommandParameters
     {
-        public object testowy { get; set; }
-        public string Text { get; set; }
-        public Canvas Canvas { get; set; }
+        public TextBox numberOfCirclesTextbox { get; set; }
+        public Canvas canvas { get; set; }
     }
 }

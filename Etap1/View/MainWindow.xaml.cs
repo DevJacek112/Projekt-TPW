@@ -27,25 +27,5 @@ namespace View
         {
             InitializeComponent();
         }
-
-        public int getIlosc() {
-            return Int32.Parse(this.Ilosc.Text);
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //MessageBox.Show("Button is Clicked");
-            /*
-            Label testLabel = new Label();
-            testLabel.Content = "TEST";
-            this.Granice.Child = testLabel;
-            */
-
-            int ilosc = getIlosc();
-
-            Kolko kolko = new Kolko();
-            kolko.Promien = 5;
-            kolko.Rysuj(this.Granice, ilosc);
-        }
     }
 }

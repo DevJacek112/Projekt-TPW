@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logika;
+using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Diagnostics;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -26,29 +28,34 @@ namespace ViewModel
         private void OnClickSpawnButton(object parameter)
         {
             var parameters = parameter as MyCommandParameters;
-            if (parameters == null)
-            {
-                return;
-            }
 
-            var canvas = parameters.Canvas;
-            var text = parameters.testowy;
-            Debug.WriteLine("Button clicked");
-            Debug.WriteLine(text);
+            Canvas canvas = parameters.canvas;
+            TextBox textBox = parameters.numberOfCirclesTextbox;
+            int numberOfCircles = Convert.ToInt32(textBox.Text);
+
+            Controller.spawnCircles(numberOfCircles, canvas);
         }
 
         public bool CanSpawn(object parameter)
         {
-            return true;
-            
-            /*
             var parameters = parameter as MyCommandParameters;
             if (parameters == null)
             {
                 return false;
             }
 
-            if (Convert.ToInt32(parameters.Text) <= 0)
+            var canvas = parameters.canvas;
+            TextBox textBox = parameters.numberOfCirclesTextbox;
+            int numberOfCircles = Convert.ToInt32(textBox.Text);
+
+            Controller.spawnCircles(numberOfCircles, canvas);
+         
+            if (parameters == null)
+            {
+                return false;
+            }
+
+            if (numberOfCircles <= 0)
             {
                 return false;
             }
@@ -56,7 +63,7 @@ namespace ViewModel
             {
                 return true;
             }
-            */
+            
         }
 
         static void Main(string[] args)
