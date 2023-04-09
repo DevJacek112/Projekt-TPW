@@ -26,7 +26,6 @@ namespace View
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new Commands();
         }
 
         public int getIlosc() {

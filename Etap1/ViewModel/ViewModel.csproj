@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CanvasMultiValueConverter.cs" />
     <Compile Include="Commands.cs" />
     <Compile Include="MyCommandParameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

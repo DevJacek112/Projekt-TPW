@@ -3,32 +3,52 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ViewModel
 {
     public class Commands
     {
         public ICommand ClickSpawnButonCommand { get; }
+        public MyCommandParameters Parameters { get; set; }
 
         public Commands()
         {
+            Parameters = new MyCommandParameters();
             ClickSpawnButonCommand = new RelayCommand(OnClickSpawnButton, CanSpawn);
+            Debug.WriteLine("zinicjalizowano commands");
         }
 
-        public void OnClickSpawnButton(object Parameter)
+        private void OnClickSpawnButton(object parameter)
         {
+            var parameters = parameter as MyCommandParameters;
+            if (parameters == null)
+            {
+                return;
+            }
+
+            var canvas = parameters.Canvas;
+            var text = parameters.Text;
             Debug.WriteLine("Button clicked");
-            Debug.WriteLine(Parameter);
-
-            //Logika.Controller.spawnCircles(Convert.ToInt32(Parameter));
+            Debug.WriteLine(text);
         }
 
-        public bool CanSpawn(object Parameter)
+        public bool CanSpawn(object parameter)
         {
-            if(Convert.ToInt32(Parameter) <= 0)
+            return true;
+            
+            /*
+            var parameters = parameter as MyCommandParameters;
+            if (parameters == null)
+            {
+                return false;
+            }
+
+            if (Convert.ToInt32(parameters.Text) <= 0)
             {
                 return false;
             }
@@ -36,11 +56,12 @@ namespace ViewModel
             {
                 return true;
             }
+            */
         }
 
         static void Main(string[] args)
         {
-            
+
         }
     }
 }
