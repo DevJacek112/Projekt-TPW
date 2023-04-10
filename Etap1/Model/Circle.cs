@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Circle
+    public class Circle : INotifyPropertyChanged
     {
         float x;
         float y;
@@ -18,6 +19,9 @@ namespace Model
             this.y = y;
             this.size = size;
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         static void Main(string[] args)
         {
 
