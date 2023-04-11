@@ -26,8 +26,8 @@ namespace Logika
         {
             Random r = new Random(Guid.NewGuid().GetHashCode());
 
-            int x = r.Next(1, (int)canvas.ActualWidth);
-            int y = r.Next(1, (int)canvas.ActualHeight);
+            int x = r.Next(0, (int)canvas.ActualWidth);
+            int y = r.Next(0, (int)canvas.ActualHeight);
 
             Circle circleObject = new Circle(x, y, size);
 
