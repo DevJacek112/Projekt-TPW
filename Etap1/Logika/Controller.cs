@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -7,7 +8,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using Model;
+using Dane;
+
 
 namespace Logika
 {
@@ -29,7 +31,7 @@ namespace Logika
             int x = r.Next(0, (int)canvas.ActualWidth);
             int y = r.Next(0, (int)canvas.ActualHeight);
 
-            Circle circleObject = new Circle(x, y, size);
+            Circle circleObject = new Circle(x, y, size, radius);
 
             Ellipse circle = new Ellipse();
             circle.Width = 2 * radius;
@@ -48,7 +50,8 @@ namespace Logika
                 directionY = random.Next(-2, 2);
             }
 
-            Thread thread = new Thread(() => {
+            Thread thread = new Thread(() =>
+            {
                 while (true) {
                     var dispatcher = Application.Current.Dispatcher;
                     dispatcher.Invoke(() =>
@@ -57,23 +60,24 @@ namespace Logika
                         double top = Canvas.GetTop(circle);
 
                         if (left + circle.Width >= canvas.ActualWidth) {
-                            directionX = -1;
+                            circleObject.DirectionX = -1;
                         }
-                        else if (left <= 0)
-                        {
-                            directionX = 1;
+                        else if (left <= 0) {
+                            circleObject.DirectionX = 1;
                         }
 
                         if (top + circle.Height >= canvas.ActualHeight) {
-                            directionY = -1;
+                            circleObject.DirectionY = -1;
                         }
-                        else if (top <= 0)
-                        {
-                            directionY = 1;
+                        else if (top <= 0) {
+                            circleObject.DirectionY = 1;
                         }
 
-                        Canvas.SetLeft(circle, left + directionX);
-                        Canvas.SetTop(circle, top + directionY);
+                        circleObject.X += circleObject.DirectionX;
+                        circleObject.Y += circleObject.DirectionY;
+
+                        Canvas.SetLeft(circle, circleObject.X - circleObject.Radius);
+                        Canvas.SetTop(circle, circleObject.Y - circleObject.Radius);
                     });
                     Thread.Sleep(20);
                 }
