@@ -1,8 +1,13 @@
 ﻿using System.Collections.Generic;
 
 namespace Dane {
-    internal class CircleList {
+    public class CircleList {
         private List<Circle> circles;
+
+        public int getLenght()
+        {
+            return circles.Count;
+        }
 
         public CircleList() {
             circles = new List<Circle>();

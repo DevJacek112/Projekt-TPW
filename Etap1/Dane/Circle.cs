@@ -8,26 +8,39 @@ using System.Threading.Tasks;
 namespace Dane
 {
    public class Circle : INotifyPropertyChanged {
-        public int X { get; set; }
-        public int Y { get; set; }
+        public double X { get; set; }
+        public double Y { get; set; }
         public int Size { get; set; }
         public int Radius { get; set; }
-        public int DirectionX { get; set; }
-        public int DirectionY { get; set; }
+        public double DirectionX { get; set; }
+        public double DirectionY { get; set; }
 
-        public Circle(int x, int y, int size, int radius) {
+        public double Speed { get; set; }
+
+        public double Mass { get; set; }
+
+        public Circle(int x, int y, int size, int radius, double speed, double mass) {
             X = x;
             Y = y;
             Size = size;
             Radius = radius;
+            Speed = speed;
+            Mass = mass;
 
-            Random random = new Random();
-            DirectionX = random.Next(-2, 2);
-            DirectionY = random.Next(-2, 2);
+            DirectionX = 0;
+            DirectionY = 0;
+
+
             while (DirectionX == 0 && DirectionY == 0) {
-                DirectionX = random.Next(-2, 2);
-                DirectionY = random.Next(-2, 2);
+                Random random = new Random();
+                DirectionX = random.NextDouble() * 2.0 - 1.0;
+                DirectionY = random.NextDouble() * 2.0 - 1.0;
             }
+
+            Console.WriteLine("dir X: " + DirectionX + "dir Y: " + DirectionY + "Speed: " + speed);
+
+            DirectionX *= speed/mass; 
+            DirectionY *= speed/mass;
         }
 
 
