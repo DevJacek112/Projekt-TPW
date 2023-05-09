@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -58,8 +59,7 @@ namespace Logika
             canvas.Children.Add(circle);
 
             circleList.AddCircle(circleObject);
-
-            Thread thread = new Thread(() =>
+            Task task = new Task( () => 
             {
                 while (true) {
                     var dispatcher = Application.Current.Dispatcher;
@@ -87,7 +87,7 @@ namespace Logika
                         circleObject.Y += circleObject.DirectionY;
 
 
-                        for(int i = 0; i < circleList.getLenght(); i++)
+                        for(int i = 0; i < circleList.CountCircles(); i++)
                         {
                             double distance = Math.Sqrt(Math.Pow(circleList.GetCircle(i).X - circleObject.X, 2) + Math.Pow(circleList.GetCircle(i).Y - circleObject.Y, 2));
 
@@ -109,7 +109,7 @@ namespace Logika
                     Thread.Sleep(20);
                 }
             });
-            thread.Start();
+            task.Start();
 
         }
     }

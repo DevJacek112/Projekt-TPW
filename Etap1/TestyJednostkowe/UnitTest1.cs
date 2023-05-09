@@ -13,7 +13,6 @@ namespace TestyJednostkowe {
 
             circle.Width = 2;
             circle.Height = 2;
-            // Debug.WriteLine(circle.Width + " " + circle.Height);    
             Assert.AreEqual(circle.Width, 2);
             Assert.AreEqual(circle.Height, 2);
         }
@@ -25,6 +24,28 @@ namespace TestyJednostkowe {
             int threadCount2 = currentProcess2.Threads.Count;
             Debug.WriteLine(threadCount2);
             Assert.IsTrue(threadCount2 < 50);
+        }
+
+        [TestMethod]
+        public void TestMethod3() {
+            Dane.CircleList list = new Dane.CircleList();
+            Dane.Circle circle1 = new Dane.Circle(5, 5, 5, 5, 10, 1);
+            list.AddCircle(circle1);
+            Assert.AreEqual(list.CountCircles(), 1);
+            Assert.AreEqual(list.GetCircle(0), circle1);
+            list.Clear();
+            Assert.AreEqual(list.CountCircles(), 0);
+        }
+
+        [TestMethod]
+        public void TestMethod4() {
+            Dane.Circle circle1 = new Dane.Circle(5, 5, 5, 5, 10, 1);
+            Assert.AreEqual(circle1.X, 5);
+            Assert.AreEqual(circle1.Y, 5);  
+            Assert.AreEqual(circle1.Size, 5);
+            Assert.AreEqual(circle1.Radius, 5);
+            Assert.AreEqual(circle1.Speed, 10);
+            Assert.AreEqual(circle1.Mass, 1);
         }
     }
 }
